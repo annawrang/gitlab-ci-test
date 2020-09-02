@@ -16,14 +16,10 @@ cache:
     - .m2/repository/
     - target/
 
-.pre:
-  stage: .pre
-  script:
-    - echo $GREETING
-
 build:
   stage: build
   script:
+    - echo $GREETING
     - mvn $MAVEN_CLI_OPTS compile
 
 test:

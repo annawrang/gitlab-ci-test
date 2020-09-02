@@ -16,8 +16,8 @@ cache:
     - .m2/repository/
     - target/
 
-greeting:
-  stage: greeting
+.pre:
+  stage: .pre
   script:
     - echo $GREETING
 

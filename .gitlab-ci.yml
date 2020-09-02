@@ -8,12 +8,18 @@ variables:
   # when running from the command line.
   # `installAtEnd` and `deployAtEnd` are only effective with recent version of the corresponding plugins.
   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
+  GREETING: "Hello!"
 
 
 cache:
   paths:
     - .m2/repository/
     - target/
+
+greeting:
+  stage: greeting
+  script:
+    - echo $GREETING
 
 build:
   stage: build

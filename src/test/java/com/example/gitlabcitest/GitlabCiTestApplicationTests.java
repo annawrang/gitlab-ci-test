@@ -17,9 +17,9 @@ class GitlabCiTestApplicationTests {
         assertThat(1 + 1).isEqualTo(2);
     }
 
-    @Test
-    void additionShouldFail() {
-        assertThat(1 + 2).isEqualTo(2);
-    }
+//    @Test
+//    void additionShouldFail() {
+//        assertThat(1 + 2).isEqualTo(2);
+//    }
 
 }

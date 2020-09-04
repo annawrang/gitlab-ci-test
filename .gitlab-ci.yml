@@ -8,6 +8,7 @@ variables:
   # when running from the command line.
   # `installAtEnd` and `deployAtEnd` are only effective with recent version of the corresponding plugins.
   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
+  GREETING: "Hello!"
 
 
 cache:
@@ -18,6 +19,7 @@ cache:
 build:
   stage: build
   script:
+    - echo $GREETING
     - mvn $MAVEN_CLI_OPTS compile
 
 test:
@@ -25,9 +27,9 @@ test:
   script:
     - mvn $MAVEN_CLI_OPTS test
 
-deploy:
-  stage: deploy
-  script:
-    - mvn $MAVEN_CLI_OPTS deploy
-  only:
-    - master
+#deploy:
+#  stage: deploy
+#  script:
+#    - mvn $MAVEN_CLI_OPTS deploy
+#  only:
+#    - master
